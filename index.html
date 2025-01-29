@@ -1,0 +1,78 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Conversational Canvas</title>  
+    <link rel="stylesheet" href="styles.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">  
+</head>  
+<body>  
+    <!-- New Session Button -->  
+    <button id="new-session-button" title="New Session">  
+        New Canvas  
+    </button>  
+  
+    <div class="app-container">  
+        <div class="prompt-library"></div>  
+        <div class="chat-interface">  
+            <div class="chat-header">  
+                <h1>Conversational Canvas</h1>  
+            </div>  
+            <div class="chat-window" id="chat-window"></div>  
+  
+            <div class="recommendations" id="recommendations" style="display: none;"></div>  
+            <div class="input-area">  
+                <!-- Dropdown Menu for Checkboxes -->  
+                <div class="checkbox-container">  
+                    <div class="options-menu">  
+                        <button id="options-menu-button" title="Options">  
+                            <i class="fa-solid fa-ellipsis-vertical"></i> <!-- Three-dot icon -->  
+                        </button>  
+                        <div class="dropdown-content">  
+                            <!-- Direct Image Generation Checkbox -->  
+                            <div class="direct-generation-checkbox" title="Direct Image Generation">  
+                                <input type="checkbox" id="direct-image-generation">  
+                                <label for="direct-image-generation"></label> <span>Quick Mode</span>  
+                            </div>  
+                            <!-- Recommendations Checkbox -->  
+                            <div class="recommendation-checkbox" title="Recommendations">  
+                                <input type="checkbox" id="show-recommendations">  
+                                <label for="show-recommendations"></label> <span>Recommendations</span>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+                <!-- Image upload icon -->  
+                <label for="image-upload" class="image-upload-label">  
+                    <input type="file" id="image-upload" accept="image/*">  
+                    <i class="fa-solid fa-paperclip"></i>  
+                </label>  
+  
+                <input type="text" id="user-input" placeholder="Type your message...">  
+                <button id="send-button">  
+                    <i class="fa-solid fa-paper-plane"></i>  
+                </button>  
+            </div>  
+        </div>  
+    </div>  
+  
+    <!-- Modal for enlarged image view -->  
+    <div id="image-modal" class="modal">  
+        <span class="close">&times;</span>  
+        <img class="modal-content" id="enlarged-img">  
+        <a id="download-link" download="generated-image.jpg">Download</a>  
+    </div>  
+  
+    <!-- Include the JavaScript modules -->  
+    <script type="module" src="api.js"></script>  
+    <script type="module" src="ui.js"></script>  
+    <script type="module" src="state.js"></script>  
+    <script type="module" src="events.js"></script>  
+    <script type="module" src="utils.js"></script>  
+    <script type="module" src="app.js"></script>  
+</body>  
+</html>  

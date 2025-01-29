@@ -1,0 +1,378 @@
+/* styles.css */  
+body {  
+    font-family: 'Open Sans', sans-serif;  
+    margin: 0;  
+    padding: 0;  
+    display: flex;  
+    height: 100vh;  
+    color: #f5f5f5;  
+    overflow: hidden;  
+
+    /* Background properties */  
+    background-image: url('generated_00 (3).png'); /* Replace with the path to your image */  
+    background-size: cover;  
+    background-repeat: no-repeat;  
+    background-position: center;  
+    background-attachment: fixed;  
+
+    /* Optional overlay to make it more subtle */  
+    position: relative;  
+}  
+
+/* Overlay to adjust the brightness and add a subtle tint */  
+body::before {  
+    content: '';  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background: rgba(64, 66, 88, 0.8);   
+    pointer-events: none; 
+}   
+  
+/* --- */
+.app-container {  
+    display: flex;  
+    width: 100%;  
+    height: 100%;  
+    padding: 20px;  
+    box-sizing: border-box;  
+}   
+
+.prompt-library {
+    width: 8%;
+    height: 75%;
+    padding: 20px 10px;
+    overflow-y: auto;
+    /* background-color: #343541; */
+    background: transparent;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin-right: 20px;
+    margin-top: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    scrollbar-width: thin;
+    scrollbar-color: #404258 #343541;
+    position: relative;
+    bottom: 37px;
+}
+  
+.prompt-library .category-heading {  
+    cursor: pointer;  
+    padding: 10px;  
+    background-color: #404258;  
+    border-radius: 10px;  
+    margin: 10px;  
+    text-align: center;  
+    font-size: 25px;  
+    position: relative;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+}  
+
+.prompt-library .prompt-list li i {  
+    margin-right: 20px; /* Add margin to the right of each icon */  
+}  
+  
+.prompt-library .prompt-list li i:last-child {  
+    margin-right: 0; /* Remove margin from the last icon to avoid extra space */  
+}  
+  
+.prompt-library .prompt-list {  
+    list-style: none;  
+    padding: 0;  
+    margin: 5px 0;  
+}  
+  
+.prompt-library .prompt-list li {  
+    padding: 10px 0;  
+    border-bottom: 1px solid #3a3a3a;  
+    color: #b0b0b0;  
+    cursor: pointer;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+}  
+  
+.prompt-library .prompt-list li:hover {  
+    background-color: #2F3645;  
+    color: #ffffff;  
+}  
+  
+.main-content {  
+    flex: 1;  
+    /* background-color: #404258;   */
+    background: transparent;
+    border-radius: 15px;  
+    padding: 20px;  
+    backdrop-filter: blur(5px);   
+    max-height: 100%;  
+    scrollbar-width: thin;  
+    scrollbar-color: #707070 #404258;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+}  
+  
+.chat-header {  
+    text-align: center;  
+    padding: 20px 0;  
+    margin-bottom: 20px;  
+    width: 100%;  
+}  
+  
+.chat-header h1 {  
+    margin: 0;  
+    color: #f5f5f5;  
+    font-size: 20px;  
+    font-weight: bolder;  
+}  
+  
+.chat-interface {  
+    flex: 1;  
+    display: flex;  
+    flex-direction: column;  
+    /* background-color: #404258;   */
+    background: transparent;
+    padding: 20px;  
+    border-radius: 15px;  
+    position: relative;  
+    overflow: hidden;  
+    backdrop-filter: blur(5px);  
+    width: 100%;  
+}  
+  
+.chat-window {  
+    flex: 1;  
+    padding: 10px;  
+    overflow-y: auto;  
+    overflow-x: hidden; 
+    /* background-color: #404258;   */
+    background: transparent;
+    border-radius: 15px;  
+    margin-bottom: 10px;  
+    scrollbar-width: thin;  
+    scrollbar-color: #404258 #343541;  
+}  
+  
+.chat-window::-webkit-scrollbar {  
+    width: 8px;  
+}  
+  
+.chat-window::-webkit-scrollbar-track {  
+    background: #343541;  
+    border-radius: 10px;  
+}  
+  
+.chat-window::-webkit-scrollbar-thumb {  
+    background: #707070;  
+    border-radius: 10px;  
+    border: 2px solid #343541;  
+}  
+  
+.input-area {  
+    display: flex;  
+    align-items: center;  
+    padding: 10px;  
+    /* background-color: #343541;   */
+    background: transparent;
+    border-radius: 15px;  
+    position: relative;  
+    bottom: 0;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+    margin-top: 15px;  
+    width: 100%;  
+}  
+  
+.input-area input[type="text"] {  
+    flex: 1;  
+    padding: 10px;  
+    margin-right: 10px;  
+    /* background-color: #343541;   */
+    background: transparent;
+    border: none;  
+    border-radius: 15px;  
+    color: #f5f5f5;  
+    width: 100%;  
+}  
+  
+.input-area button {  
+    padding: 10px;  
+    background-color: #f5f5f5;  
+    color: #000;  
+    border: none;  
+    border-radius: 15px;  
+    cursor: pointer;  
+    transition: opacity 0.3s ease;  
+}  
+  
+.input-area button:hover {  
+    background-color: #e0e0e0;  
+}  
+  
+.input-area .fa-paper-plane {  
+    font-size: 20px;  
+}  
+  
+.message {  
+    display: flex;  
+    align-items: center;  
+    margin-bottom: 15px;  
+    font-size: 16px;  
+    line-height: 1.4;  
+}  
+
+.user-message .message-content {  
+    background-color: #474A56;  
+    color: #fff;  
+    border-radius: 12px;  
+    padding: 10px 15px;  
+    max-width: 90%; /* Adjusted to fit within the chat window */  
+    display: flex;  
+    align-items: center;  
+    word-wrap: break-word; /* Ensures text wraps correctly */  
+}  
+  
+.assistant-message .message-content {  
+    background-color: #45474B;  
+    color: #fff;  
+    border-radius: 12px;  
+    padding: 15px 20px;  
+    max-width: 90%; /* Adjusted to fit within the chat window */  
+    display: flex;  
+    align-items: center;  
+    line-height: 1.6;  
+    margin-bottom: 10px;  
+    white-space: pre-wrap;  
+    word-wrap: break-word; /* Ensures text wraps correctly */  
+}   
+  
+.user-message {  
+    justify-content: flex-start;  
+}  
+  
+/* .user-message .message-content {  
+    background-color: #474A56;  
+    color: #fff;  
+    border-radius: 12px;  
+    padding: 10px 15px;  
+    max-width: 60%;  
+    display: flex;  
+    align-items: center;  
+}   */
+  
+.assistant-message {  
+    justify-content: flex-start;  
+}  
+  
+/* .assistant-message .message-content {  
+    background-color: #45474B;  
+    color: #fff;  
+    border-radius: 12px;  
+    padding: 15px 20px;  
+    max-width: 100%;  
+    display: flex;  
+    align-items: center;  
+    line-height: 1.6;  
+    margin-bottom: 10px;  
+    white-space: pre-wrap;  
+}   */
+  
+/* Modal styling */  
+.modal {  
+    display: none;  
+    position: fixed;  
+    z-index: 1000;  
+    left: 0;  
+    top: 0;  
+    width: 100%;  
+    height: 100%;  
+    overflow: auto;  
+    background-color: rgba(0, 0, 0, 0.8);  
+}  
+  
+.modal-content {  
+    background-color: #343541;  
+    margin: 10% auto;  
+    padding: 20px;  
+    border-radius: 15px;  
+    width: 60%;  
+    max-width: 600px;  
+    color: #f5f5f5;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  
+    box-sizing: border-box;  
+}  
+  
+.modal-header {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    border-bottom: 1px solid #707070;  
+    padding-bottom: 10px;  
+}  
+  
+.modal-header h2 {  
+    margin: 0;  
+    font-size: 24px;  
+}  
+  
+.close {  
+    color: #f5f5f5;  
+    font-size: 28px;  
+    font-weight: bold;  
+    cursor: pointer;  
+}  
+  
+.close:hover, .close:focus {  
+    color: #ff4d4d;  
+}  
+  
+.modal-body {  
+    margin-top: 20px;  
+}  
+  
+.modal-body label {  
+    display: block;  
+    margin-top: 15px;  
+    font-size: 18px;  
+}  
+  
+.modal-body input[type="text"], .modal-body input[type="number"], .modal-body textarea {  
+    width: calc(100% - 22px);  
+    margin-top: 5px;  
+    padding: 10px;  
+    font-size: 16px;  
+    background-color: #404258;  
+    color: #f5f5f5;  
+    border: 1px solid #707070;  
+    border-radius: 5px;  
+    box-sizing: border-box;  
+}  
+  
+.modal-body textarea {  
+    resize: vertical;  
+}  
+  
+.modal-footer {  
+    display: flex;  
+    justify-content: flex-end;  
+    margin-top: 20px;  
+}  
+  
+.modal-footer button {  
+    margin-left: 10px;  
+    padding: 10px 20px;  
+    background-color: #f5f5f5;  
+    color: #000;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    font-size: 16px;  
+}  
+  
+.modal-footer button:hover {  
+    background-color: #e0e0e0;  
+}  
